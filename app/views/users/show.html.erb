@@ -5,8 +5,10 @@
 
 <h3><u>登録情報</u></h3>
 <h3>
-  Name：<%= @user.name %><br>
-  Email：<%= @user.email %>
+  Name : <%= @user.name %><br>
+  Email : <%= @user.email %><br>
+  Area : <%= @user.area %>
+  
 </h3>
 
 <%= link_to "編集", edit_user_path, class:"btn btn-large btn-primary" %>
