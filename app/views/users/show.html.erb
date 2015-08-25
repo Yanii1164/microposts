@@ -1,9 +1,4 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
-
-<h3><u>登録情報</u></h3>
+<h2><u>登録情報</u></h2>
 <h3>
   Name : <%= @user.name %><br>
   Email : <%= @user.email %><br>
@@ -11,4 +6,24 @@
   
 </h3>
 
-<%= link_to "編集", edit_user_path, class:"btn btn-large btn-primary" %>
+<%= link_to "編集", edit_user_path, class:"btn btn-large btn-success" %>
+
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  </div>
+</div>
