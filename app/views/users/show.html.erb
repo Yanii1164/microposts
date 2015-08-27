@@ -1,13 +1,19 @@
-<h2><u>登録情報</u></h2>
-<h3>
+  
+  <h3><u>登録情報</u></h3>
+  <h5>
   Name : <%= @user.name %><br>
   Email : <%= @user.email %><br>
   Area : <%= @user.area %>
+  </h5>
+
+  <%= link_to "編集", edit_user_path, class:"btn btn-large btn-success" %>
+
+  <%= link_to "フォロー", "/users/followings", class:"btn btn-large btn-primary" %>
+
+  <%= link_to "フォロワー", "/users/followers", class:"btn btn-large btn-primary" %>
+
   
-</h3>
-
-<%= link_to "編集", edit_user_path, class:"btn btn-large btn-success" %>
-
+  
 
 <div class="row">
   
@@ -19,6 +25,7 @@
       </h1>
     </section>
   </aside>
+  
   
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
