@@ -1,20 +1,23 @@
+
+  <div class="panel panel-primary">
+     <div class="panel-heading">マイプロフィール</div>
+     <table class="table">
+        <thead>
+         <tr>
+            <th>Name</th><th>Email</th><th>Area</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+            <td><%= @user.name %></td><td><%= @user.email %></td><td><%= @user.area %></td>
+         </tr>
+        </tbody>
+     </table>
+    </div>
   
-  <h3><u>登録情報</u></h3>
-  <h5>
-  Name : <%= @user.name %><br>
-  Email : <%= @user.email %><br>
-  Area : <%= @user.area %>
-  </h5>
-
-  <%= link_to "編集", edit_user_path, class:"btn btn-large btn-success" %>
-
-  <%= link_to "フォロー", "/users/followings", class:"btn btn-large btn-primary" %>
-
-  <%= link_to "フォロワー", "/users/followers", class:"btn btn-large btn-primary" %>
+  <%= link_to "プロフィールの編集", edit_user_path, class:"btn btn-large btn-success" %>
 
   
-  
-
 <div class="row">
   
   <aside class="col-md-4">
@@ -23,6 +26,8 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <%= link_to "フォロー", "/users/followings", class:"btn btn-small btn-info" %>
+      <%= link_to "フォロワー", "/users/followers", class:"btn btn-small btn-info" %>
     </section>
   </aside>
   
